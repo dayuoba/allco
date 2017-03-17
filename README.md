@@ -1,7 +1,7 @@
 # allco 
 
 **Makes your async node code clearify**
-**without multi try{}catch(e){}**
+**without plenty of try{}catch(e){}**
 
 a lib for writing i/o codes and error handling like which in golang
 
@@ -19,7 +19,7 @@ this module is still being developed
 const fs = require('allco').fs;
 
 async function testReadFile() {
-	// if you has muilti await calls in one function
+	// if you has mutli await calls in one function
 	// and use the same error variable name just like err
 	// pls use `var` for declaration, because when using
 	// using `let` that node will throw re-define exception
