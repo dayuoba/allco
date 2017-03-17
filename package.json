@@ -1,6 +1,6 @@
 {
   "name": "allco",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "warn": "this module is still being developed",
   "description": "a lib for writing i/o codes and error handling like which in golang",
   "demo": [
