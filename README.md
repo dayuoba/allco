@@ -1,10 +1,14 @@
-# allco
+# allco 
+
 a lib for writing i/o codes and error handling like which in golang
 
   As node supports async/await feature, we can code with less calbacks, but the same time we get a lot of `try catch` codes when error handling
 so, I write this lib for wrapping the natural async i/o modules.
 
  As there is a popular node_module called co, so  i name this one all-co :)
+
+## Note
+this module is still being developed
 
 ### demo
 
