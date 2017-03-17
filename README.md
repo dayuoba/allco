@@ -1,6 +1,6 @@
 # allco 
 
-**Makes your async js code clarify**
+**clarify your async js code**
 **without plenty of try{}catch(e){}**
 
 a lib for writing i/o codes and error handling like which in golang
