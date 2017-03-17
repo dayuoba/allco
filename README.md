@@ -1,5 +1,6 @@
 # allco 
 
+** Makes your async node code clearify **
 a lib for writing i/o codes and error handling like which in golang
 
   As node supports async/await feature, we can code with less calbacks, but the same time we get a lot of `try catch` codes when error handling
