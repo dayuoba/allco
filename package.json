@@ -1,0 +1,28 @@
+{
+  "name": "allco",
+  "version": "0.0.12",
+  "description": "a lib for writing i/o codes and error handling like which in golang",
+  "demo": [
+    "code like:",
+    "const fs = require('allco/fs');",
+    "async function foo() {",
+    "  let [err, data] = await fs.readFile('foo.txt', 'utf8');",
+    "  if (err) return console.log(err);",
+    "  return data",
+    "}"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "co",
+    "lib",
+    "async",
+    "await",
+    "golang",
+    "error"
+  ],
+  "author": "dayuoba@gmail.com",
+  "license": "MIT"
+}
