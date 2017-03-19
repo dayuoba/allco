@@ -1,8 +1,8 @@
 const utils = module.exports = {};
 
-utils.wrap2AllcoFns = function(nativeModule) {
+utils.allco = function(nativeModule) {
 	return async function() {
-		let err, rep;
+		let err = null, data = null;
 		try {
 			data = await promisefulNativeModule(nativeModule).apply(null, convertArgs2Array(arguments));
 		} catch(e) {
@@ -27,8 +27,8 @@ convertArgs2Array = function(args = null) {
 }
 
 wrapperedCallback = function(resolve, reject) {
-	return function(err, rep) {
+	return function(err = null, data = null) {
 		if (err) return reject(err);
-		resolve(rep);
+		resolve(data);
 	}
 }
