@@ -1,9 +1,9 @@
 # allco 
 
-**Makes your async node code clearify**
-**without multi try{}catch(e){}**
+**clarify your async js code**
+**without plenty of try{}catch(e){}**
 
-a lib for writing i/o codes and error handling like which in golang
+a lib for writing i/o codes and error handling  which is like coding in golang
 
   As node supports async/await feature, we can code with less calbacks, but the same time we get a lot of `try catch` codes when error handling
 so, I write this lib for wrapping the natural async i/o modules.
@@ -19,7 +19,7 @@ this module is still being developed
 const fs = require('allco').fs;
 
 async function testReadFile() {
-	// if you has muilti await calls in one function
+	// if you has mutli await calls in one function
 	// and use the same error variable name just like err
 	// pls use `var` for declaration, because when using
 	// using `let` that node will throw re-define exception
