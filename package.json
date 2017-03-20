@@ -1,6 +1,6 @@
 {
   "name": "allco",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "warn": "this module is still being developed",
   "description": "a lib for writing i/o codes and error handling like which in golang",
   "demo": [
@@ -25,5 +25,8 @@
     "error"
   ],
   "author": "dayuoba@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "2.2.25"
+  }
 }
