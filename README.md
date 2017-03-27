@@ -50,7 +50,7 @@ npm install allco
 **Note**
 
 If you care about memory usage of allco,you can require what you need dividually.
-eg. `const mongodb = require('allco/mongodb');
+eg. `const mongodb = require('allco/mongodb');`
 
 * fs
 
