@@ -15,6 +15,8 @@ this module is still being developed
 
 ### Demo
 
+use allco:
+
 ```javascript
 const mongodb = require('allco').mongodb;
 
@@ -34,6 +36,26 @@ test()
 	console.log(result);
 })
 .catch(e => console.log(e));
+```
+
+use native:
+
+```javascript
+const mongo = require('mongodb').MongoClient;
+
+async function test() {
+	try {
+		var db = await mongo.connect('mongodb://localhost:27017');
+	} catch(e) {
+		return console.log(e);
+	}
+
+	let main = db.collection('main');
+	// ...
+}
+
+test();
+
 ```
 
 ### Installation
