@@ -21,9 +21,11 @@ const mongodb = require('allco').mongodb;
 async function test() {
 	var [err, db] = await mongodb.db('mongodb://localhost:27017/test');
 	if (err) throw err; // do your error handling here
+	
 	let main = db.collection('main');
 	var [err, rep] = main.insert({foo: 'bar'});
 	if (err) throw err;
+	
 	return [err, data];
 }
 
