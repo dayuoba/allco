@@ -26,7 +26,7 @@ async function test() {
 	var [err, rep] = main.insert({foo: 'bar'});
 	if (err) throw err;
 	
-	return [err, data];
+	return [err, rep];
 }
 
 test()
