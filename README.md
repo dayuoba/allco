@@ -44,6 +44,7 @@ use native:
 const mongo = require('mongodb').MongoClient;
 
 async function test() {
+	// do your error handling with `try/catch`
 	try {
 		var db = await mongo.connect('mongodb://localhost:27017');
 	} catch(e) {
