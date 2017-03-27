@@ -17,7 +17,7 @@ async function testReadFile() {
 	// just return err and data
 	// return [err, data];
 	var [err, db] = await mongodb.db('mongodb://localhost:27017/test');
-	if (err) return console.log(err);	
+	if (err) throw err;
 	let main = db.collection('main');
 	var [err, rep] = await main.find({});
 	// console.log(err, rep)
@@ -49,4 +49,5 @@ async function testReadFile() {
 testReadFile()
 .then((result) => {
 	console.log(result);// [undefined, 'hello world\n']
-});
+})
+.catch(err => console.log(err));
