@@ -3,7 +3,7 @@ const utils = require('../utils')
 const fsModules = Object.keys(_fs);
 const fs = module.exports = {}; 
 // TODO 
-// some methods that use linstener
+// some methods commented out below that using linstener
 // need to be converted correctly
 const exportModules = [
 	'access',
@@ -36,11 +36,12 @@ const exportModules = [
 	'symlink',
 	'truncate',
 	'unlink',
-	//'unwatchFile',
 	'utimes',
-	// 'watch',
 	'write',
 	'writeFile',
+	// 'unwatchFile',
+	// 'watchFile'
+	// 'watch',
 ];
 
 fsModules.forEach((module) => { 
