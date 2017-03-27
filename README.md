@@ -56,28 +56,56 @@ eg. `const mongodb = require('allco/mongodb');`
 * fs
 
 * mongodb
+import:
 
 ```javascript
+const mongodb = require('allco').mongodb; 
+// or 
+const mongodb = require('allco/mongodb');
+```
 
-const mongodb = require('allco').mongodb;
+connect:
+
+```javascript
 // connect to db
 var [err, db] = await mongodb.db('mongodb://localhost:27017/test');
 if (err) return console.log(err);	
 // get a collection instance
 let main = db.collection('main');
+```
+
+
+retrieve:
+
+```javascript
+// find with query which equals find(query).toArray((err, data) => {...})
 var [err, rep] = await main.find({});
 if (err) return console.log(err);	
-// insert a doc
-var [err, rep] = await main.insert({foo: 'bar'});
-if (err) return console.log(err);
-// update a doc
-var [err, rep] = await main.update({foo: 'bar'}, {$set: {foo: 'fool'}}, {multi: true});
-if (err) return console.log(err);
-// remove a doc
-var [err, rep] = await main.remove({foo: 'bar'});
-if (err) return console.log(err);
 // findOne method
 var [err, rep] = await main.findOne({foo: 'fool'});
 if (err) return console.log(err);
+```
 
+insert:
+
+```javascript
+// insert a doc
+var [err, rep] = await main.insert({foo: 'bar'});
+if (err) return console.log(err);
+```
+
+update:
+
+```javascript
+// update a doc
+var [err, rep] = await main.update({foo: 'bar'}, {$set: {foo: 'fool'}}, {multi: true});
+if (err) return console.log(err);
+```
+
+delete:
+
+```javascript
+// remove a doc
+var [err, rep] = await main.remove({foo: 'bar'});
+if (err) return console.log(err);
 ```

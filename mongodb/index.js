@@ -32,7 +32,7 @@ const _wrapCollection = function(col) {
 	collection._col = col;
 	// export this raw collection instance
 	// because sometimes you may need to retrieve as stream
-	collection.getRaw = () => collection._col;
+	collection.getNative = () => collection._col;
 	exportMethods.forEach((method) => {
 		collection[method] = _bindMethod(collection, col, method);
 	});
