@@ -4,4 +4,4 @@
 
 ### Native Modules
 
-* fs - pick off unexpect exported api attrs
+* more modules conversion
