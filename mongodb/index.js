@@ -3,12 +3,16 @@ const utils = require('../utils');
 
 const mongo = module.exports = {};
 
+mongo.getNative = () => {return _mongo;};
+
 mongo.db = async function(options) {
 	const db = {
 		_collections: {},
 		_db: null,
-		conllection: null
+		conllection: null,
+		getNative: function() {return this._db}
 	}; 
+
 	let [err, _db] = await _connect(options);
 	if (!err) {
 		db._db = _db;
