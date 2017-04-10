@@ -41,25 +41,47 @@ const _wrapCollection = function(col) {
 		collection[method] = _bindMethod(collection, col, method);
 	});
 	// `find` is a particular method
-	collection.find = async function() {
+	collection.find = function() {
 		const col = collection._col;
 		let args = [].slice.call(arguments);
-		let err, data;
-		try {
-			data = await new Promise((resolve, reject) => {
-				col.find.apply(col, args).toArray((err, rep) => {
-					if (err) return reject(err);
-					resolve(rep);
-				})
-			})
-		} catch(e) {
-			err = e;
-		}
-
-		return [err, data];
+		const _cursor = col.find.apply(col, args);
+		const cursor = _wrapCursor(_cursor);
+		return cursor;
 	};
 
 	return collection;
+}
+
+function _wrapCursor(ori) {
+	const cursor = {};
+	cursor._csr = ori;	
+	cursor.getNative = () => {return cursor._csr};
+	cursor.skip = function(num) {
+		this._csr = this._csr.skip.apply(this._csr, [num]);
+		return this;
+	};
+
+	cursor.limit = function(num) {
+		this._csr = this._csr.limit.apply(this._csr, [num]);
+		return this;
+	};
+
+	cursor.toArray = async function() {
+		let err, data;
+		const self = this;
+		try {
+			data = await new Promise((res, rej) => {
+				self._csr.toArray((err, result) => {
+					if (err) return rej(err);
+					return res(result);
+				});
+			});
+		} catch(e) {
+			err = e;
+		}
+		return [err, data];
+	};
+	return cursor;
 }
 
 

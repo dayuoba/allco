@@ -2,7 +2,7 @@
 
 * db pool
 
-* find.limit.skip for pagination
+* find.limit.skip for pagination(done)
 
 ### Native Modules
 

@@ -19,7 +19,7 @@ async function testReadFile() {
 	var [err, db] = await mongodb.db('mongodb://localhost:27017/test');
 	if (err) throw err;
 	let main = db.collection('main');
-	var [err, rep] = await main.find({});
+	var [err, data] = await main.find({}).skip(10).limit(3).toArray();
 	// console.log(err, rep)
 	var [err, rep] =await main.insert({foo: 'bar'});
 	// console.log(err, rep);
@@ -27,7 +27,7 @@ async function testReadFile() {
 	// console.log(err, rep);
 	var [err, rep] = await main.remove({foo: 'bar'});
 	var [err, rep] = await main.findOne({foo: 'fool'});
-	console.log(err, rep);
+	// console.log(err, rep);
 	// if (err) return console.log(err)
 	// console.log('***')
 	// console.log(rep)
@@ -48,6 +48,6 @@ async function testReadFile() {
 
 testReadFile()
 .then((result) => {
-	console.log(result);// [undefined, 'hello world\n']
+	// console.log(result);// [undefined, 'hello world\n']
 })
 .catch(err => console.log(err));
